@@ -7,7 +7,11 @@ git fetch --unshallow
 wget https://github.com/h3arn.gpg 
 git config --global gpg.program gpg2
 gpg2 --import h3arn.gpg
-
+# set owner trust
+echo '364864A3A1AF4174D9BDE7C66076CBBA23E98A57:6:' | gpg2 --import-ownertrust
+#gpg --list-keys --fingerprint |grep pub -A 1|egrep -Ev "pub|--"|tr -d ' '|sed 's/Keyfingerprint=//' \
+# | awk 'BEGIN { FS = "\n" } ; { print $1":6:" } ' | grep '364864A3A1AF4174D9BDE7C66076CBBA23E98A57:6:' | gpg --import-ownertrust
+gpg2 --list-keys
 # Dependency: hexo-cli
 npm install hexo-cli -g
 
