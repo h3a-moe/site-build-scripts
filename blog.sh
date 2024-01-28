@@ -38,6 +38,7 @@ title: History
 ---
 <div class="markdown-body">
 <h1>Commit History</h1>
+<p>To see earlier history, plaese go to my <a href="https://blog-archive-v1.h3a.moe/history">blog archive</a>. </p>
 EOT
 echo '```' >> source/history/index.md 
 git log --show-signature >> source/history/index.md 
